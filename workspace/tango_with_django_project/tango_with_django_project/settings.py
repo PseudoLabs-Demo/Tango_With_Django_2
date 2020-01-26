@@ -12,8 +12,25 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# This is the path to the templates directory in any computer system.
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
+# Static directory. 
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
+# This is where the media is stored.
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+
+# This is used by django to locate the media files.
+MEDIA_ROOT = MEDIA_DIR
+
+# This is the url to server the media (dynamic) to the client.
+MEDIA_URL = '/media/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -52,8 +69,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tango_with_django_project.urls'
 
-# This is the path to the templates directory in any computer system
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+# List of paths where django can expect to find static files.
+STATICFILES_DIRS = [STATIC_DIR, ]
 
 TEMPLATES = [
     {
@@ -66,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
