@@ -17,13 +17,16 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # This is the path to the templates directory in any computer system.
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
 # Static directory. 
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # This is where the media is stored.
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+# List of paths where django can expect to find static files.
+STATICFILES_DIRS = [STATIC_DIR, ]
 
 
 # This is used by django to locate the media files.
@@ -68,9 +71,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tango_with_django_project.urls'
-
-# List of paths where django can expect to find static files.
-STATICFILES_DIRS = [STATIC_DIR, ]
 
 TEMPLATES = [
     {
