@@ -35,6 +35,8 @@ MEDIA_ROOT = MEDIA_DIR
 # This is the url to server the media (dynamic) to the client.
 MEDIA_URL = '/media/'
 
+# This is where users that haven't logged in will be directed to if they try and access authorized only content.
+LOGIN_URL = 'rango:login'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
